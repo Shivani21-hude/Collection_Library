@@ -22,25 +22,9 @@ namespace CollectionProblem
                 Console.WriteLine(element);
 
             }
+            Console.WriteLine(list[2]);
 
         }
-
-        public static void Stack()
-        {
-
-            Console.WriteLine("\n Stack Demo....");
-            Stack<string> stack = new Stack<string>();
-            stack.Push("Sarang");
-            stack.Push("Sita");
-            stack.Push("Laxman");
-            stack.Push("Devki");
-
-            foreach (var element in stack)
-            {
-                Console.WriteLine(element);
-            }
-        }
-
         public static void Set()
         {
             Console.WriteLine("\n Set Demo....");
@@ -54,6 +38,22 @@ namespace CollectionProblem
             {
                 Console.WriteLine(element);
             }
+        }
+        public static void Stack()
+        {
+
+            Console.WriteLine("\n Stack Demo....");
+            Stack<string> stack = new Stack<string>();
+            stack.Push("Sarang");
+            stack.Push("Sita");
+            stack.Push("Laxman");
+            stack.Push("Devki");
+            string pop = stack.Pop();
+            foreach (var element in stack)
+            {
+                Console.WriteLine(element);
+            }
+            Console.WriteLine("Poped element: " + pop);
         }
 
         public static void Queue()
@@ -69,19 +69,28 @@ namespace CollectionProblem
             {
                 Console.WriteLine(element);
             }
+            string dequeue = queue.Dequeue();
+            Console.WriteLine("Dequeue element: " + dequeue);
+            Console.WriteLine("\nIterating the queue elements after dequeu one element:");
+            Queue<string>.Enumerator enumerator = queue.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
         }
 
         public static void Dictionary()
         {
             Console.WriteLine("\n Dictionary Demo....");
 
-            Dictionary<int, string> dictionory = new Dictionary<int, string>();
-            dictionory.Add(100, "ram");
-            dictionory.Add(200, "rahul");
-            dictionory.Add(300, "Mani");
-            dictionory.Add(400, "Vrutik");
-
-            foreach (var element in dictionory)
+            Dictionary<int, string> dictionary = new Dictionary<int, string>();
+            dictionary.Add(100, "ram");
+            dictionary.Add(200, "rahul");
+            dictionary.Add(300, "Mani");
+            dictionary.Add(400, "Vrutik");
+            Console.WriteLine("Access value using key(key=100): " + dictionary[100]);
+            Console.WriteLine("\nIterating Dictionary: ");
+            foreach (var element in dictionary)
             {
                 Console.WriteLine(element);
             }

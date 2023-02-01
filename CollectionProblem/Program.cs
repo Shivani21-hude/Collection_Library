@@ -5,7 +5,7 @@ namespace CollectionProblem
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine( "***** Welcome to Collection Ligrary ***** ");
+            Console.WriteLine( "***** Welcome to C# Collection Library ***** ");
             Collection.List();
             Collection.Stack();
             Collection.Set();
